@@ -58,9 +58,11 @@ if [ "$local_kernel_version" = "$release_kernel_version" ] && [ -z "$git_passwor
 else
     if [ "$(whoami)" = "runner" ]; then
         git_name=private
-        git clone https://"$git_name":"$git_password"@$gitea/sbwml/target_linux_generic -b main target/linux/generic --depth=1
+        #git clone https://"$git_name":"$git_password"@$gitea/sbwml/target_linux_generic -b main target/linux/generic --depth=1
+        git clone https://github.com/sbwml/target_linux_generic -b openwrt-23.05 target/linux/generic --depth=1
     elif [ "$(whoami)" = "sbwml" ]; then
-        git clone https://$gitea/sbwml/target_linux_generic -b main target/linux/generic --depth=1
+        #git clone https://$gitea/sbwml/target_linux_generic -b main target/linux/generic --depth=1
+        git clone clone https://github.com/sbwml/target_linux_generic -b openwrt-23.05 target/linux/generic --depth=1
     fi
 fi
 
